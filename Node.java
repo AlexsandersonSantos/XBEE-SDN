@@ -11,6 +11,26 @@ public class Node implements Comparable<Node>{
 	private Node parent;
 	private List<Edge> edges = new ArrayList<Edge>();
 	
+	
+	private int msb16;
+	private int lsb16;
+	
+	public void setMsb16(int msb16){
+		this.msb16 = msb16;
+	}
+	
+	public void setLsb16(int lsb16){
+		this.lsb16 = lsb16;
+	}
+	
+	public int getMsb16(){
+		return msb16;
+	}
+	
+	public int getLsb16(){
+		return lsb16;
+	}
+	
 	public Node (int address16, int address64) {
 		this.address16 = address16;
 		this.address64 = address64;		
@@ -22,7 +42,8 @@ public class Node implements Comparable<Node>{
 
 	public void setAddress16(int address16) {
 		this.address16 = address16;
-	}
+	}	
+		
 
 	public int getAddress64() {
 		return address64;

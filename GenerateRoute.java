@@ -68,10 +68,11 @@ public class GenerateRoute {
 				for (Edge edge : actualNode.getNeighbors()) {				
 					if (!visitedNodes.contains((edge.getNode()))) {
 						//System.out.println(edge.getNode().getAddress16());
-						if (edge.getNode().getDistance()>(actualNode.getDistance()+edge.getWeight())) {
-							edge.getNode().setDistance(actualNode.getDistance()+edge.getWeight());
+						if (edge.getNode().getDistance()>(actualNode.getDistance()-edge.getWeight())) { //Modificação + por -
+							edge.getNode().setDistance(actualNode.getDistance()-edge.getWeight());		////Modificação + por -	
 							edge.getNode().setParent(actualNode);
-						}
+						}						
+						
 					}
 				}				
 				visitedNodes.add(actualNode);
